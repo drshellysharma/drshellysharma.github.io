@@ -24,13 +24,14 @@ export default function Contact() {
           <div className="p-4 bg-harvard-silver/10 rounded-full text-harvard-crimson mb-6">
             <MapPin className="w-8 h-8" />
           </div>
-          <h3 className="text-xl font-serif font-bold text-harvard-black mb-4">Hospital Location</h3>
+          <h3 className="text-xl font-serif font-bold text-harvard-black mb-4">Dr. Shelly Sharma</h3>
           <p className="text-harvard-black/80 leading-relaxed mb-6">
+            Breast Suite, <br/>
             Indraprastha Apollo Hospital, <br/>
-            Jasola, New Delhi - 110076
+            Jasola, New Delhi - 110020
           </p>
           <Link 
-            href="https://www.google.com/maps/search/?api=1&query=Indraprastha+Apollo+Hospital+New+Delhi&query_place_id=ChIJmarqE63mDDkRd228dtR6wDs" 
+            href="https://maps.app.goo.gl/TdPiCVF5cJbQSJnU6" 
             target="_blank"
             className="text-harvard-crimson font-semibold hover:underline text-sm mt-auto"
           >
@@ -47,8 +48,8 @@ export default function Contact() {
           
           <div className="space-y-4 w-full">
             <div>
-              <p className="text-xs font-bold text-harvard-slate uppercase tracking-wider mb-1">Phone</p>
-              <p className="text-harvard-black/80 font-medium">+91</p>
+              <p className="text-xs font-bold text-harvard-slate uppercase tracking-wider mb-1">Breast Suite @ Apollo Hospitals</p>
+              <p className="text-harvard-black/80 font-medium">011-71793043</p>
             </div>
             <div>
               <p className="text-xs font-bold text-harvard-slate uppercase tracking-wider mb-1">Email</p>
