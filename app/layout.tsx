@@ -1,30 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Merriweather } from "next/font/google";
+import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import { cn } from "@/lib/utils";
+import Navbar from "@/components/navbar"; // Ensures the Navbar appears on every page
 
-const inter = Inter({ 
-  subsets: ["latin"], 
-  variable: "--font-inter",
-  display: 'swap',
-});
-
-const merriweather = Merriweather({
-  weight: ["300", "400", "700", "900"],
+const playfair = Playfair_Display({ 
   subsets: ["latin"],
-  variable: "--font-merriweather",
-  display: 'swap',
+  variable: '--font-serif',
 });
 
+const lato = Lato({ 
+  subsets: ["latin"],
+  weight: ['400', '700'],
+  variable: '--font-sans',
+});
+
+// SEO METADATA
 export const metadata: Metadata = {
   metadataBase: new URL('https://drshellysharma.github.io'),
   title: {
-    default: "Dr. Shelly Sharma | Best Breast Radiologist in Delhi | Apollo Hospital",
+    default: "Dr. Shelly Sharma | Leading Breast Radiologist in Delhi",
     template: "%s | Dr. Shelly Sharma"
   },
-  description: "Dr. Shelly Sharma is a pioneer in Breast Oncoradiology at Apollo Hospital, Delhi. Expert in Mammography, Cryoablation, and Biopsies.",
-  keywords: ["Breast Cancer Doctor India", "Best Radiologist Delhi", "Dr Shelly Sharma", "Mammography Apollo"],
+  description: "Dr. Shelly Sharma is a pioneer in Breast Oncoradiology at Indraprastha Apollo Hospital, New Delhi. Expert in Mammography, Biopsies, and Early Cancer Detection.",
+  keywords: ["Breast Radiologist Delhi", "Dr Shelly Sharma", "Mammography Apollo", "Breast Cancer Doctor India"],
   openGraph: {
     title: "Dr. Shelly Sharma | Leading Breast Radiologist",
     description: "Compassion meets Precision. Early detection saves lives.",
@@ -32,7 +30,7 @@ export const metadata: Metadata = {
     siteName: 'Dr. Shelly Sharma',
     images: [
       {
-        url: '/images/headshot.jpg',
+        url: '/images/headshot.jpg', 
         width: 800,
         height: 600,
       },
@@ -41,3 +39,18 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={`${playfair.variable} ${lato.variable} font-sans antialiased bg-harvard-parchment/20 text-harvard-black`}>
+        <Navbar />
+        {children}
+      </body>
+    </html>
+  );
+}
