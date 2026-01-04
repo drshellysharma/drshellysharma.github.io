@@ -18,28 +18,26 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Shelly Sharma | Leading Breast Oncoradiologist",
-  description: "India's pioneer in breast cancer screening and interventions.",
+  metadataBase: new URL('https://drshellysharma.github.io'),
+  title: {
+    default: "Dr. Shelly Sharma | Best Breast Radiologist in Delhi | Apollo Hospital",
+    template: "%s | Dr. Shelly Sharma"
+  },
+  description: "Dr. Shelly Sharma is a pioneer in Breast Oncoradiology at Apollo Hospital, Delhi. Expert in Mammography, Cryoablation, and Biopsies.",
+  keywords: ["Breast Cancer Doctor India", "Best Radiologist Delhi", "Dr Shelly Sharma", "Mammography Apollo"],
+  openGraph: {
+    title: "Dr. Shelly Sharma | Leading Breast Radiologist",
+    description: "Compassion meets Precision. Early detection saves lives.",
+    url: 'https://drshellysharma.github.io',
+    siteName: 'Dr. Shelly Sharma',
+    images: [
+      {
+        url: '/images/headshot.jpg',
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <body 
-        suppressHydrationWarning={true}
-        className={cn(
-          "min-h-screen bg-harvard-parchment font-sans antialiased",
-          inter.variable,
-          merriweather.variable
-        )}
-      >
-        <Navbar /> 
-        {children}
-      </body>
-    </html>
-  );
-}
