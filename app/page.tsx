@@ -1,4 +1,4 @@
-import { Award, Play, ArrowRight, Newspaper, ExternalLink } from "lucide-react";
+import { Award, Play, ArrowRight, Newspaper, ExternalLink, Download, BookOpen } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -96,6 +96,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* NEW E-BOOK SECTION (Moved Here) */}
+      <section className="py-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative rounded-2xl bg-harvard-crimson overflow-hidden shadow-xl">
+             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+             <div className="relative px-8 py-12 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+                <div className="flex-1 text-white">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold tracking-wide uppercase mb-4">
+                    <BookOpen className="w-3 h-3" />
+                    Free Patient Resource
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-serif mb-4">
+                    Your Blueprint to a Healthy You
+                  </h3>
+                  <p className="text-white/90 text-lg mb-6 max-w-xl">
+                    A comprehensive guide designed to help you connect with your body. 
+                    Includes a step-by-step self-exam guide, scripts for talking to your doctor, 
+                    and a checklist for your annual screenings.
+                  </p>
+                  <a 
+                    href="/pdfs/ebook.pdf" 
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center justify-center px-6 py-3 bg-white text-harvard-crimson rounded-full font-bold hover:bg-gray-100 transition-colors gap-2"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download Free Guide
+                  </a>
+                </div>
+                
+                <div className="hidden md:flex items-center justify-center w-32 h-32 bg-white/10 rounded-full border border-white/20">
+                   <BookOpen className="w-12 h-12 text-white/80" />
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
       {/* Empowering You Through Knowledge (Videos & Articles) */}
       <section className="py-24 bg-harvard-silver/10 border-t border-harvard-silver/20">
         <div className="max-w-7xl mx-auto px-6">
@@ -105,7 +143,7 @@ export default function Home() {
             </h2>
             <p className="text-harvard-black/60 max-w-2xl mx-auto">
               Fear often comes from the unknown. Dr. Shelly breaks down complex procedures 
-              and breast health topics into simple, reassuring explanations to help you make informed decisions.
+              and breast health topics into simple, reassuring explanations.
             </p>  
           </div>
 
@@ -141,8 +179,7 @@ export default function Home() {
             ))}
           </div>
           
-          {/* Videos section Link */}
-          <div className="flex flex-col items-center justify-center pt-8 border-t border-harvard-silver/20">
+          <div className="flex flex-col items-center justify-center pt-8 mb-20 border-t border-harvard-silver/20">
             <Link 
               href="/videos"
               className="inline-flex items-center justify-center px-8 py-3 bg-transparent border border-harvard-crimson text-harvard-crimson rounded-full font-semibold hover:bg-harvard-crimson hover:text-white transition-all gap-2"
@@ -156,7 +193,7 @@ export default function Home() {
           <h3 className="text-2xl font-serif text-harvard-black mb-6 border-l-4 border-harvard-crimson pl-4 flex items-center gap-2">
              Featured in Media
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
              {articles.map((article) => (
                <Link 
                   key={article.id}
